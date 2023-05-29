@@ -12,7 +12,7 @@ WORKDIR /root
 RUN apt-get update && \
     apt-get install -y nmap && \
     dpkg -i rustscan.deb && \
-    chmod 777 rustapi-linux-amd64
+    chmod +x rustapi-linux-amd64
 
 # 暴露端口
 EXPOSE 50500
