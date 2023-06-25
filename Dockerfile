@@ -1,13 +1,15 @@
 # 基础镜像
 FROM debian:latest
 # 维护者信息
-MAINTAINER maintainer_name <test@test.com>
+MAINTAINER RustScanAPI <test@test.com>
+
+RUN mkdir ./cache && mkdir /app
 
 # 将应用程序代码复制到镜像中
-COPY ./rustapi-linux-amd64 /root
-COPY ./rustscan.deb /root
+COPY ./rustapi-linux-amd64 /app
+COPY ./rustscan.deb /app
 # 设置工作目录
-WORKDIR /root
+WORKDIR /app
 
 RUN apt-get update && \
     apt-get install -y nmap && \
