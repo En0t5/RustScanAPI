@@ -3,7 +3,7 @@ FROM debian:latest
 # 维护者信息
 MAINTAINER RustScanAPI <test@test.com>
 
-RUN mkdir ./cache && mkdir /app
+RUN mkdir /app/cache && mkdir /app
 
 # 将应用程序代码复制到镜像中
 COPY ./rustapi-linux-amd64 /app
