@@ -1,5 +1,5 @@
 # 基础镜像
-FROM debian:latest
+FROM hub.atomgit.com/amd64/debian:rc-buggy
 # 维护者信息
 MAINTAINER RustScanAPI <test@test.com>
 
@@ -13,7 +13,7 @@ COPY ./rustscan.deb /app
 WORKDIR /app
 
 # 设置国内源
-RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak && echo "deb http://mirrors.aliyun.com/debian/ stable main contrib non-free" > /etc/apt/sources.list && \
+RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak &  echo "deb http://mirrors.aliyun.com/debian/ stable main contrib non-free" > /etc/apt/sources.list && \
                                                           echo "deb-src http://mirrors.aliyun.com/debian/ stable main contrib non-free" >> /etc/apt/sources.list && \
                                                           echo "deb http://mirrors.aliyun.com/debian-security/ stable-security main contrib non-free" >> /etc/apt/sources.list && \
                                                           echo "deb-src http://mirrors.aliyun.com/debian-security/ stable-security main contrib non-free" >> /etc/apt/sources.list && \
